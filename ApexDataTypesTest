@@ -1,0 +1,96 @@
+//NEED HELP? COPY ALL INTO http://collabedit.com/new AND CHAT US THE URL!        
+ @isTest
+ public class ApexDataTypesTest {
+     @isTest public static void ApexDataTypesTestMethod(){
+        string text1 = 'this text';
+        string text2 = 'that text';
+        
+        string text3 = text1 + text2;
+        System.debug(text3);
+        text3 = text3 + 'more text';
+        System.debug(text3);
+        
+        string text4 = text3.toUpperCase();
+        System.debug('SHOUT! ' + text4);
+        
+        string text5;//FIX ME!!! Turn text4 into a lower case string.
+        System.debug('whisper' + text5);
+        
+        string text6;//FIX ME!!! Find a string method to remove whitespaces.
+        System.debug('No more whitespaces: ' + text6);
+        
+        string text7 = text6.remove('text');
+        System.debug('This is what\'s left: ');//FIX ME!!! Edit the debug output to include text7.
+        
+        string text8 = text7.replace('more', 'less');
+        System.debug('now with less! ' + text8);
+        
+        string text9 = text8.repeat(2);
+        System.debug('repeated twice: ' + text9);
+        
+        Integer number1 = text9.length();
+        System.debug('how long? ' + number1);
+        
+        Integer number2 = text9.indexOf('this');
+        System.debug('find this: ' + number2);
+        
+        Integer number3;//FIX ME!!! Use indexOf() to find 'that' in text9.
+        System.debug('find that: ' + number3);
+        
+        Integer number4 = text9.LastIndexOf('that');
+        System.assertEquals(16, number4, 'Expected value should equal actual value returned by lastIndexOf()');
+        
+        Integer number5 = text9.IndexOf('less');
+        System.assertEquals(null,null);//FIX ME!! Replace nulls with the expected index and the actual number5 result
+        
+        //define some numbers we'll use to work with Integers and operators
+        Integer number6 = 6;
+        Integer number7 = 7;
+        
+        Integer sum1 = number6 + number7;
+        System.Debug('do the math: ' + sum1);
+        System.Debug('x++ returns value then increments: ' + sum1++);
+        System.Debug('what is the value now?: ' + sum1);
+        System.Debug('++x increments then returns value: ' + ++sum1); 
+        System.assertEquals(15, sum1);
+        
+
+        Integer sum2;//FIX ME!!! add number7 to number6
+        Integer sum3;//FIX ME!!! set sum3 to increment sum2.
+        //System.assertEquals(, sum3);//FIX ME!!! Uncomment and add your expected result.
+        
+        //What happens if we assign a non-integer value?
+        Integer decimal0 = number6 / number7;
+        System.debug('Integer of 2 integers divided: ' + decimal0);
+        
+        //Even though the result is a decimal, 2 Integers divided are still treated as integers.
+        Decimal decimal1 = number6 / number7;
+        System.debug('Decimal of 2 integers divided: ' + decimal1);
+        
+        //"Casting" is a useful technique to convert one data type to another.
+        Decimal decimal2 = (decimal)number6 / (decimal)number7;
+        System.debug('2 integers "cast" to decimals: ' + decimal2);
+        
+        //Care must be taken when working with different numeric types:
+        //Explicitly declare Double or Decimal values by adding .0 if no fractional value is present
+        Double nope = 5/3;
+        System.debug('Double of divided integers: 5/3 != ' + nope);
+        Double better = 5.0/3.0;
+        System.debug('Double of divided integers with .0 added: 5.0/3.0 == ' + better);
+        //Explicitly declare Long values by adding L if the number is likely to exceed 2147483647
+        Long wrong = 2147483647 + 1;
+        System.debug('Maximum integer value of 2147483647 plus 1: ' + wrong);
+        Long right = 2147483647L + 1;
+        System.debug('Maximum integer value as a Long plus 1: ' + right);
+        
+        //Dates and times are both tricky and easy to work with.
+        Date date1 = Date.today();
+        Datetime datetime1 = Datetime.now();
+        Time time1 = Time.newInstance(18, 30, 2, 20);
+        Time time2 = Datetime.now().time();
+        Date date2 = date1 + 1;
+        System.debug('Tomorrow: ' + date2);
+        System.debug('Yesterday: ');//FIX ME!!! 
+//NEED HELP? COPY ALL INTO http://collabedit.com/new AND CHAT US THE URL!        
+    }
+}
